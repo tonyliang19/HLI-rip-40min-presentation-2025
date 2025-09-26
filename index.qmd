@@ -17,3 +17,55 @@
   * Tsleil-Waututh Nations
 
 :::
+
+## Background Heart Transplant
+
+## Background Heart Rejection
+
+## Background ACR vs Quilty
+
+## Background Types of data
+
+## Background In-house data
+
+- Cite collaborators
+- Or have their names and pic in here
+
+## Background what method to apply
+
+- Need to know which method is most suitable to apply on this
+- Which there really isnt any after the pipeline run
+
+## MESSI pipeline
+
+- Overview pic of the pipeline
+
+## MESSI component cleaning
+
+## MESSI component evaluation
+
+## MESSI results on sim data
+
+## MESSI results on real data
+
+## MESSI future direction
+
+## Current work on GeoMX
+
+## Background of GeoMX
+
+## GeoMx results 1
+
+## GeoMx results 2
+
+## GeoMx results 3
+
+## GeoMx results 4
+
+## Next steps
+
+## Conclusion
+
+## Acknowledgments
+
+## Reference
