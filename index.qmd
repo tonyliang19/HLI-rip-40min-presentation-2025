@@ -1,3 +1,49 @@
+---
+#title: Predicting heart rejection response with spatial transcriptomics
+talk-title: "Multimodal Integration for Heart Transplant Rejection"
+author: Chunqing (Tony) Liang
+other-authors: "Dr. Amrit Singh"
+institute: University of British Columbia
+talk-date: "Oct 6, 2025"
+---
+
+## {#title background-image="assets/img/website_no_bkg.png" background-position="top"}
+
+<!--- setup r lib -->
+```{r}
+#| label: "setup"
+#| echo: false
+#| include: false
+#| eval: true
+
+library(knitr)
+library(cowplot)
+```
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+### {{< meta talk-title >}} 
+
+<br>
+
+
+::: {.f3 .bold}
+
+{{< meta author >}} 
+
+PhD student in Bioinformatics
+
+Supervisor: {{< meta other-authors >}}
+
+{{< meta talk-date >}}
+
+:::
+
 ## Land acknowledgement {background-image=assets/img/land_ack.jpg background-size=cover background-opacity="0.4"}
 
 **I would like to acknowledge that I work on the traditional, ancestral, and unceded territory of the Coast Salish Peoples, including the territories of the xwməθkwəy̓əm (Musqueam), Skwxwú7mesh (Squamish), Stó:lō and Səl̓ílwətaʔ/Selilwitulh (Tsleil- Waututh) Nations.**
@@ -20,11 +66,21 @@
 
 ## Background Heart Transplant
 
+- TODO
+
 ## Background Heart Rejection
+
+- TODO
+
+## Background types of rejection ...
 
 ## Background ACR vs Quilty
 
+- TODO
+
 ## Background Types of data
+
+- TODO
 
 ## Background In-house data
 
@@ -36,36 +92,109 @@
 - Need to know which method is most suitable to apply on this
 - Which there really isnt any after the pipeline run
 
+## Objective
+
+- Improve diagnosis using multimodal data
+
+- Can we tell long term outcome of rejection?
+
+
 ## MESSI pipeline
 
-- Overview pic of the pipeline
+![](assets/img/overview_fig/MESSI_workflow_overview_diagram.png){fig-align="center"}
 
-## MESSI component cleaning
 
-## MESSI component evaluation
+## MESSI pipeline Input Processing
 
-## MESSI results on sim data
+![](assets/img/overview_fig/overview_upper_panel.png){fig-align="center"}
 
-## MESSI results on real data
+
+- Currently handles both R and Python --> could extend to more
+- Data flows in there ...
+- Important model selection prior to evaluation
+
+
+## MESSI pipeline Method Evaluation
+
+:::: {.columns}
+
+::: {.column width="55%"}
+
+![](assets/img/overview_fig/overview_mid_panel.png){fig-align="center"}
+
+:::
+
+::: {.column width="40%"}
+
+- Each method is an isolated workflow (dash box)
+- Each method internally runs evaluation in parallel
+- Each result is saved separately ...
+
+:::
+
+::::
+
+## MESSI pipeline Output Collection
+
+![](assets/img/overview_fig/overview_bottom_panel.png){fig-align="center"}
+
+
+
+
+
+
+## Computational Resources Usage
+
+![](assets/img/fig_computational_resources_usage.png)
+
+## Performance on real-world datasets
+
+![](assets/img/fig_performance_evaluation_real.png)
+
+## Biological Interpretation on biomarkers identified
+
+![](assets/img/fig_fgsea_analysis_two_panels.png)
 
 ## MESSI future direction
 
+- TODO
+
 ## Current work on GeoMX
+
+- TODO
 
 ## Background of GeoMX
 
+- TODO
+
 ## GeoMx results 1
+
+![](assets/img/high_cv_genes_heatmap.png)
 
 ## GeoMx results 2
 
+
+![](assets/img/segment_vs_class_umap_plot.png)
+
 ## GeoMx results 3
+
+![](assets/img/segment_vs_class_tsne_plot.png)
+
 
 ## GeoMx results 4
 
+- TODO
+
 ## Next steps
+
+- TODO
 
 ## Conclusion
 
+- TODO
+
 ## Acknowledgments
+
+## {background-image=assets/img/website_no_bkg.png background-size=contain background-position=top}
 
 ## Reference
