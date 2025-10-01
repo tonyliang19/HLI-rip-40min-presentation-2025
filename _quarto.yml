@@ -1,5 +1,5 @@
 date-format: long
-bibliography: references.bib
+bibliography: assets/bib/references.bib
 suppress-bibliography: false
 engine: knitr
 format:
@@ -22,6 +22,7 @@ format:
     hash-type: title # or number of slide 
     link-external-icon: true
     link-external-newwindow: true
+    csl: assets/bib/vancouver.csl
     lang: en-CA
     theme: 
       - default
