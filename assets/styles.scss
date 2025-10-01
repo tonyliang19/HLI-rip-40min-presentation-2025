@@ -13,9 +13,16 @@
 
 // Primary/body text
 $mainFont: 'Jost', sans-serif;
-$mainFontSize: 24px;//30px;
+$mainFontSize: 36px;//24px; 30px
 // Vertical spacing between blocks of text
 $blockMargin: 20px;
+
+// Main colors
+$primary: #26AF64;
+$secondary: #e98a15;
+$tertiary: #2a76dd;
+$quaternary: #ff170d;
+$fifth-color: #f9c80e;
 
 // Headings
 $headingMargin: 0 0 $blockMargin 0;
@@ -35,6 +42,21 @@ $heading4Size: 1.00em;
 
 $codeFont: monospace;
 
+$body-bg: #fefefe; // This is pure white
+$presentation-heading-color: $primary;
+// Chance stuff original 36px
+$presentation-font-size-root: 32px; // Use 40px when width 1600 height 900
+
+$link-color: $primary;
+
+/*-- scss:rules --*/
+
+.primary {color: $primary;}
+.secondary {color: $secondary;}
+.tertiary {color: $tertiary;}
+.quaternary {color: $quaternary;}
+.fifth-color {color: $fifth-color;}
+
 .thanks {
   font-size: 1.5em;
   text-align: center !important; /* Center text horizontally */
@@ -43,6 +65,27 @@ $codeFont: monospace;
   align-items: center !important; /* Center vertically within its parent */
   height: 100vh !important;
 }
+
+.smaller {
+  font-size: 0.5em;
+}
+
+.reveal {
+  .slides {
+    .slide {
+      figure {
+        figcaption {
+          font-size: 0.5em;
+        }
+      }
+    }
+  }
+}
+
+.reveal .slide aside .aside-footnotes {
+  font-size: 14px;
+}
+
 
 // start using css here
 //#title-slide > h1 {
