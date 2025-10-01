@@ -66,7 +66,7 @@ Supervisor: {{< meta other-authors >}}
 
 ## Background Heart Transplant
 
-- TODO
+- TODo
 
 ## Background Heart Rejection
 
@@ -91,6 +91,14 @@ Supervisor: {{< meta other-authors >}}
 - Cite collaborators
 - Or have their names and pic in here
 
+## Timeline of Data collection
+
+- Insert the timeline plot here
+
+## Collected data info
+
+- Add the table info of all available categories of data
+
 ## Proof Centre
 
 ::: {.people-row}
@@ -108,8 +116,8 @@ Supervisor: {{< meta other-authors >}}
 ::: {.logo-container}
 ![](assets/img/bruce_biobank/bruce_mcmanus_logo.jpg){.round-logo}
 :::
-![](assets/img/bruce_biobank/Ying-Wangnew.jpg){.round}
-![](assets/img/bruce_biobank/chi_lai.jpeg){.round}
+![Dr. Ying Wang](assets/img/bruce_biobank/Ying-Wangnew.jpg){.round}
+![Dr. Chi Lai](assets/img/bruce_biobank/chi_lai.jpeg){.round}
 ![](assets/img/bruce_biobank/gurpreet_singhera.jpg){.round}
 ![](assets/img/bruce_biobank/coco_ng.jpeg){.round}
 ![](assets/img/bruce_biobank/tiffany_chang.jpg){.round}
@@ -117,17 +125,23 @@ Supervisor: {{< meta other-authors >}}
 
 
 
-
-## Background what method to apply
-
-- Need to know which method is most suitable to apply on this
-- Which there really isnt any after the pipeline run
-
 ## Objective
 
 - Improve diagnosis using multimodal data
 
 - Can we tell long term outcome of rejection?
+
+## Improve diagnosis using mulitmodal data
+
+- Add proposal fig of slide
+
+## Can we tell long term outcome of rejection
+
+## What method to apply
+
+- Need to know which method is most suitable to apply on this
+- Which there really isnt any after the pipeline run
+
 
 
 ## MESSI pipeline
@@ -140,17 +154,17 @@ Supervisor: {{< meta other-authors >}}
 ![](assets/img/overview_fig/MESSI_workflow_overview_diagram.png){fig-align="center"}
 
 
-## MESSI pipeline Input Processing
+## Standardized data preprocessing
 
 ![](assets/img/overview_fig/overview_upper_panel.png){fig-align="center"}
 
 
 - Currently handles both R and Python --> could extend to more
-- Data flows in there ...
+- Data flows in there , handles N different datasets
 - Important model selection prior to evaluation
 
 
-## MESSI pipeline Method Evaluation
+## Flexible method evaluation
 
 :::: {.columns}
 
@@ -160,19 +174,28 @@ Supervisor: {{< meta other-authors >}}
 
 :::
 
-::: {.column width="40%"}
+::: {.column width="45%"}
 
 - Each method is an isolated workflow (dash box)
 - Each method internally runs evaluation in parallel
 - Each result is saved separately ...
+- Easily extended to other tasks not just CV
+- On / Off to run interested methods only
 
 :::
 
 ::::
 
-## MESSI pipeline Output Collection
+## Summarized reports of metrics performances
 
-![](assets/img/overview_fig/overview_bottom_panel.png){fig-align="center"}
+![](assets/img/overview_fig/overview_bottom_panel.png){fig-align="center" width="80%"}
+
+
+- "Recursively" collects output from each method including versions
+- Summarizes metrics for downstream analysis
+- Provides rich report of computational resource usages
+
+
 
 
 
