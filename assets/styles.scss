@@ -49,6 +49,13 @@ $presentation-font-size-root: 32px; // Use 40px when width 1600 height 900
 
 $link-color: $primary;
 
+// Size for portrait images of collaborators (proof)
+$portrait-width: 150px;
+$portrait-height: 200px;
+
+// Size for round images of collaborators (bruce mcmanus biobank)
+$round-height: 126px;
+
 /*-- scss:rules --*/
 
 .primary {color: $primary;}
@@ -84,6 +91,62 @@ $link-color: $primary;
 
 .reveal .slide aside .aside-footnotes {
   font-size: 14px;
+}
+
+// Portrait image of headers/collaborators
+.people-row {
+  display: flex;
+  justify-content: center;   // center the whole row on the slide
+  align-items: center;       // vertically align if heights differ
+  gap: 2rem;                 // spacing between photos
+}
+
+.people-row img.logo {
+  height: $portrait-height;             // match portrait height
+  width: auto;               // scale proportionally
+  object-fit: contain;       // no cropping for logos
+}
+
+.people-row img.round-logo {
+  height: $round-height;
+  width: auto;
+  object-fit: contain;
+  transform: scale(2.4);   // increase size 10% visually
+  
+}
+
+.logo-container {
+  height: $round-height;
+  width: $round-height;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4.2rem; // Uggly fix, this needs to change if transofrm scale changes
+}
+
+.logo-container img.round-logo {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+
+// circular variant
+.people-row img.round {
+  width: $round-height;      // make width = height
+  height: $round-height;
+  object-fit: cover;
+  border-radius: 50%;           // makes it a circle
+  border: 2px solid #fff;       // optional: white border
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2); // optional subtle shadow
+}
+
+
+.people-row img.portrait {
+  width: $portrait-width;
+  height: $portrait-height;
+  object-fit: cover;   // crops extra but keeps faces natural
+  border-radius: 12px; // optional style
 }
 
 

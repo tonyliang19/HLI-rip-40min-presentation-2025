@@ -84,8 +84,39 @@ Supervisor: {{< meta other-authors >}}
 
 ## Background In-house data
 
+- In house cohort of $> 500$ patients recorded from 2005 - 2025
+- Proof Centre
+- Bruce McManus Biobank
+
 - Cite collaborators
 - Or have their names and pic in here
+
+## Proof Centre
+
+::: {.people-row}
+![](assets/img/proof/PROOF_logo_cond_RGB.png){.logo}
+![](assets/img/proof/dr_tebutt.jpg){.portrait}
+![](assets/img/proof/mr_casey_shannon.jpg){.portrait}
+![](assets/img/proof/ms_sarah_assadian.jpg){.portrait}
+:::
+
+## Bruce McManus Cardiovascular Biobank
+
+
+:::: {.people-row}
+
+::: {.logo-container}
+![](assets/img/bruce_biobank/bruce_mcmanus_logo.jpg){.round-logo}
+:::
+![](assets/img/bruce_biobank/Ying-Wangnew.jpg){.round}
+![](assets/img/bruce_biobank/chi_lai.jpeg){.round}
+![](assets/img/bruce_biobank/gurpreet_singhera.jpg){.round}
+![](assets/img/bruce_biobank/coco_ng.jpeg){.round}
+![](assets/img/bruce_biobank/tiffany_chang.jpg){.round}
+::::
+
+
+
 
 ## Background what method to apply
 
