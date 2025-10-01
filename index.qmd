@@ -193,8 +193,44 @@ Supervisor: {{< meta other-authors >}}
 
 - TODO
 
-## Acknowledgments
+## Discussion & Future directions {.smaller}
 
-## {background-image=assets/img/website_no_bkg.png background-size=contain background-position=top}
+- "**No method works universally well on all datasets**"
+- Classic statistical methods still work, and sometimes even better than deep learning (DL)
+- Pipeline proves way to [reproducibly]{.tertiary} explore, benchmark different aspects of integration methods
+  - Resumable
+  - Parallel to compute as many resources as allowed at the same time
+  - Ease burden of [setting up environment]{.secondary}
+
+- Need to add more methods and datasets
+  - Especially DL models are more popular now
+  - Explore if any dataset could have relation to another despite different disease/condition
+
+
+# Thanks! {.thanks}
+
+## {#acknwledgements .smaller}
+
+### Acknowledgements
+
+- [Dr. Amrit Singh]{.bold}
+- Dr. Maryam Ahmadzadeh
+- Dr. Young Woong Kim
+- Rishika Daswani
+- Roy He
+- Samuel Leung
+- Raam Sivakumar
+- Jeffrey Tang
+- Michael Yoon
+- Mingming Zhang
+
+
+::: {.footer}
+![](assets/logo.png)
+:::
+
 
 ## Reference
+
+::: {#refs}
+:::
