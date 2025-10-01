@@ -13,7 +13,7 @@
 
 // Primary/body text
 $mainFont: 'Jost', sans-serif;
-$mainFontSize: 36px;//24px; 30px
+$mainFontSize: 32px;//24px; 30px; 36px;; 
 // Vertical spacing between blocks of text
 $blockMargin: 20px;
 
@@ -36,7 +36,7 @@ $headingFontWeight: normal;
 $heading1TextShadow: $headingTextShadow;
 
 $heading1Size: 3.00em;
-$heading2Size: 2.11em;
+$heading2Size: 2em; //2.11em;
 $heading3Size: 1.55em;
 $heading4Size: 1.00em;
 
@@ -111,7 +111,7 @@ $round-height: 126px;
   height: $round-height;
   width: auto;
   object-fit: contain;
-  transform: scale(2.4);   // increase size 10% visually
+  transform: scale(2.2);   // increase size 10% visually
   
 }
 
