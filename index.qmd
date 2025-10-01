@@ -101,6 +101,11 @@ Supervisor: {{< meta other-authors >}}
 
 ## MESSI pipeline
 
+- We created a workflow pipeline [*Multimodal Experiments with SyStematic Interrogation using nextflow*]{.secondary}
+- Built with Nextflow [@di2017nextflow], Singularity [@kurtzer2017singularity]
+
+## MESSI pipeline
+
 ![](assets/img/overview_fig/MESSI_workflow_overview_diagram.png){fig-align="center"}
 
 
