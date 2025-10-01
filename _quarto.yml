@@ -1,31 +1,37 @@
-title: Predicting heart rejection response with spatial transcriptomics
-author: Chunqing Tony Liang
-institute: University of British Columbia
-date: 2025-10-06
 date-format: long
 bibliography: references.bib
+suppress-bibliography: false
 engine: knitr
 format:
   revealjs:
     #logo: materials/img/logo.png
+    #auto-stretch: false # For image resizing
     slide-number: true
     hash-one-based-index: true 
     history: false
+    fig-format: png
+    fig-align: center
+    scrollable: false
     footnotes-hover:  true
     #chalkboard: true
     embed-resources: true
     width: 1280
     height: 720
     mouse-wheel: false
-    scrollable: false
     code-overflow: wrap
-    hash-type: number
+    hash-type: title # or number of slide 
     link-external-icon: true
     link-external-newwindow: true
     lang: en-CA
     theme: 
-      - solarized
+      - default
       - assets/styles.scss
     output-file: index.html # naming other stuff, gh complains
     transition: none
     transition-speed: default # or fast or slow
+
+knitr:
+  opts_chunk:
+    message: FALSE
+    dev: "png"
+    fig.align: center
