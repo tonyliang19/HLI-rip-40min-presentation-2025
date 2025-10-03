@@ -91,6 +91,18 @@ $round-height: 126px;
   }
 }
 
+.bottom-align {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* bottom alignment */
+  gap: 1em;              /* space between images */
+  margin-bottom: 1em;
+  margin-left: 5em;
+}
+.bottom-align img {
+  width: 40%;            /* control relative size */
+  height: auto;
+}
 
 .reveal .slide aside .aside-footnotes {
   font-size: 14px;
