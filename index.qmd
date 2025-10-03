@@ -415,6 +415,25 @@ knitr::include_graphics("assets/img/overview_fig/overview_mid_panel.png")
 - Provides rich report of computational resource usages
 
 
+## Datasets evaluated {.smaller}
+
+```{r}
+#| eval: true
+#| echo: false
+
+dataset_table <- read.csv("data/real_dataset_metadata.csv")
+
+DT::datatable(
+  dataset_table,
+  rownames = FALSE,
+  options = list(
+    pageLength = 5,     # show 5 rows per page
+    autoWidth = TRUE,    # auto adjust column widths
+    scrollX = TRUE       # allow horizontal scrolling
+  )
+)
+```
+
 ## Computational Resources Usage {.nostretch}
 
 :::: {.columns}
@@ -431,9 +450,10 @@ knitr::include_graphics("assets/img/fig_computational_resources_usage.png")
 
 ::: {.column width="40%"}
 
-- A
-- B
-- C
+- MOGONET and multiview require longer durations compared to rest
+- MOGONET takes more virtual memory due to its deep learning nature
+  - Transferring of data from GPU to CPU
+- Model training and prediction steps demand more memory consumption
 
 :::
 
@@ -443,15 +463,48 @@ knitr::include_graphics("assets/img/fig_computational_resources_usage.png")
 
 ## Performance on real-world datasets
 
-![](assets/img/fig_performance_evaluation_real.png)
+:::: {.columns}
+
+::: {.column width="60%"}
+
+```{r out.width="600px", out.height="480px"}
+#| fig-align: center
+#| fig-cap-location: bottom
+knitr::include_graphics("assets/img/fig_performance_evaluation_real.png")
+```
+
+:::
+
+::: {.column width="40%"}
+
+- No method perfrom well in all scenarios
+- DIABLO performs at top compared to others
+  - The null design variant beats the full design
+- MOGONET performs the weakest
+
+
+:::
+
+:::: 
 
 ## Biological Interpretation on biomarkers identified
 
 ![](assets/img/fig_fgsea_analysis_two_panels.png)
 
-## MESSI future direction
+## MESSI future direction {.smaller}
 
-- TODO
+- "**No method works universally well on all datasets**"
+- Classic statistical methods still work, and sometimes even better than deep learning (DL)
+- Pipeline proves way to [reproducibly]{.tertiary} explore, benchmark different aspects of integration methods
+  - Resumable
+  - Parallel to compute as many resources as allowed at the same time
+  - Ease burden of [setting up environment]{.secondary}
+
+- Need to add more methods and datasets
+  - Especially DL models are more popular now
+  - Explore if any dataset could have relation to another despite different disease/condition
+
+
 
 ## Current work on GeoMX
 
