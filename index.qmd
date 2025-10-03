@@ -64,40 +64,158 @@ Supervisor: {{< meta other-authors >}}
 
 :::
 
-## Background Heart Transplant
+## Heart Transplant
 
-- TODo
+- Replace person'sick heart with healthy one from someone who has died
 
-## Background Heart Rejection
+- Occurs when heart failure is end-stage and no longer treatable in any other way
 
-- TODO
+## Heart Transplant Rejection
 
-## Background types of rejection ...
+:::: {.columns}
 
-## Background ACR vs Quilty
+::: {.column}
 
-- TODO
+```{r}
+#| fig-align: center
+#| fig-cap-location: bottom
+#| fig-cap: "Types of heart transplant rejection [@lipkova2022deep]"
 
-## Background Types of data
+knitr::include_graphics("assets/img/heart_transplant_rejection.png")
+```
 
-- TODO
+:::
 
-## Background In-house data
+::: {.column}
 
-- In house cohort of $> 500$ patients recorded from 2005 - 2025
-- Proof Centre
-- Bruce McManus Biobank
+- Relies on endomyocardial biopsy (EMB)
+- Assessments from pathologists, subjective and opinion-based
+- Multiple rejection types
+  - [Acute cellular rejection]{.secondary} (ACR)
+  - Antibody-mediated rejection
+  - [Quilty lesion]{.tertiary}
+  - Look similary structurally
 
-- Cite collaborators
-- Or have their names and pic in here
+:::
 
-## Timeline of Data collection
+::::
 
-- Insert the timeline plot here
+::: {.notes}
 
-## Collected data info
+- Diagnosis relies on endomyocardial biopsies graded by pathologists 
 
-- Add the table info of all available categories of data
+:::
+
+## Quilty and ACR
+
+
+```{r}
+#| fig-align: center
+#| fig-cap-location: bottom
+#| fig-cap: "Quilty lesion and acute cellular rejection. (A) Quilty lesion. (B) Grade 1R. (C) Grade 2R. (D) Grade 3R. [@cho2019quilty]"
+knitr::include_graphics("assets/img/acr_and_quilty.jpg")
+```
+
+
+
+## How to improve diagnosis?
+
+- What's better way to assist pathologists to differentiate different rejections
+  - What to do if there's disagreement?
+
+- Computational pathology comes in handy!
+
+::: {.fragment}
+
+```{r}
+#| fig-align: center
+#| fig-cap-location: bottom
+#| fig-cap: "Workflow in computational pathology [@wagner2022make]"
+
+knitr::include_graphics("assets/img/comp_pathology_flow.png")
+```
+
+:::
+
+
+## In-house data
+
+:::: {.columns}
+
+::: {.column}
+
+```{r}
+#| fig-align: center
+#| fig-cap-location: bottom
+
+knitr::include_graphics("assets/img/cohort_timeline.png")
+```
+
+:::
+
+::: {.column}
+
+- Data from: 
+  - Prevention of Organ Failure ([PROOF]{.tertiary}) centre
+  - Bruce McManus Cardiovascular Biobank ([BMCB]{.tertiary})
+- Cohort of $> 3000$ samples from $500$ patients
+- Composed of different types of no rejection, ACR, AMR, mixed rejection
+
+:::
+
+::::
+
+## Available variable in the cohort
+
+```{r}
+#| eval: true
+#| echo: false
+
+library(knitr)
+library(kableExtra)
+
+# Create a data frame
+data_dict <- data.frame(
+  Category = c(
+    "Demographics",
+    "Participant and donor viral serology",
+    "Induction therapy",
+    "Vitals",
+    "Labs",
+    "Complete blood counts with differentials",
+    "Immunosuppressant blood levels",
+    "Human Leukocyte Antigen – Panel Reactive Antibody (HLA-PRA)",
+    "Medication",
+    "EMB biopsy",
+    "Graft outcomes"
+  ),
+  Variables = c(
+    "Age, sex, ethnicity, comorbidities",
+    "Positive/negative/not done: Epstein-Barr Virus (EBV), Cytomegalovirus (CMV), HIV, HCV, HBsAg, HBsAb, HBcAg, HBcAb, HBV DNA",
+    "Medication with dose, route and timelines",
+    "Smoking status, weight, height, temperature, heart rate, systolic & diastolic blood pressure",
+    "Glucose, creatinine, eGFR, urea, sodium, potassium, chloride, bicarbonate, calcium, CRP, BNP, NT-proBNP, hemoglobin, platelet",
+    "Hemoglobin, platelets, WBC, RBC, neutrophils, hematocrit, lymphocytes, monocytes, eosinophils, basophils, MCV, RDW, MPV",
+    "Time and dose of tacrolimus, cyclosporine, sirolimus",
+    "Participant and donor HLA alleles: A1, A2, B, C, DR, DQ, DP",
+    "Medication times, dosing, route for both maintenance immunosuppression, hypertension, and statin therapy",
+    "ISHLT grade, antibody mediated rejection, Quilty lesions, late ischemic injury",
+    "Echocardiographic data (ejection fraction, diastolic function (E/A, E/e’), chamber volumes)"
+  )
+)
+
+# Render table
+DT::datatable(
+  data_dict,
+  rownames = FALSE,
+  options = list(
+    pageLength = 3,     # show 10 rows per page
+    autoWidth = TRUE,    # auto adjust column widths
+    scrollX = TRUE       # allow horizontal scrolling
+  )
+)
+```
+
 
 ## Proof Centre
 
@@ -107,6 +225,11 @@ Supervisor: {{< meta other-authors >}}
 ![](assets/img/proof/mr_casey_shannon.jpg){.portrait}
 ![](assets/img/proof/ms_sarah_assadian.jpg){.portrait}
 :::
+
+- Lead by Dr. Scott Tebutt, Mr. Casey Shannon, Ms. Sarah Assadian
+- Majority of biopsies of the cohort is from here
+- Collected data from multiple participating sites like Vancouver, Ottawa and Nebraska
+- Multiple timepoints biopsies from patients to from longitudinal study
 
 ## Bruce McManus Cardiovascular Biobank
 
@@ -123,6 +246,11 @@ Supervisor: {{< meta other-authors >}}
 ![](assets/img/bruce_biobank/tiffany_chang.jpg){.round}
 ::::
 
+<br>
+
+- Lead by Dr. Ying Wang, Dr. Chi Lai, Dr. Singhera, Ms. Coco Ng, Ms. Tiffany Chang
+- Several hundred more local heart transplant patients from here
+- Currently restoring slides from storage and digitizing them
 
 
 ## Objective
@@ -130,24 +258,101 @@ Supervisor: {{< meta other-authors >}}
 - Improve diagnosis using multimodal data
 
 - Can we tell long term outcome of rejection?
+  - i.e. Cardiac allograft vasculopathy ([CAV]{.secondary})
+  - CAV is 1 of top 3 causes of death in the first year after heart transplant and increases in prevalence over time [@shetty2020heart]
 
+::: {.notes}
+
+- CAV progressive condition that affects the arteries, arterioles and capillaries post heart transplant
+
+:::
 ## Improve diagnosis using mulitmodal data
 
-- Add proposal fig of slide
+```{r}
+#| fig-align: center
+#| fig-cap-location: bottom
+
+knitr::include_graphics("assets/img/aim1_develop_model_classification.png")
+```
+
 
 ## Can we tell long term outcome of rejection
 
-## What method to apply
 
-- Need to know which method is most suitable to apply on this
-- Which there really isnt any after the pipeline run
+::: {.bottom-align}
+![](assets/img/pca_cav.png)
+![](assets/img/pca_cav2.png)
+:::
 
 
+- Rejection have $\geq 1R$ is more likely to have CAV
+- People that have CAV have similar characteristics with others
+
+
+## Types of available methods
+
+::: {.columns}
+
+::: {.column width="45%"}
+
+```{r out.width="600px", out.height="480px"}
+#| fig-align: center
+#| fig-cap-location: bottom
+#| fig-cap: "Types of multimodal integration method [@subramanian2020multi]"
+knitr::include_graphics("assets/img/methods_avail.jpg")
+```
+
+:::
+<!--- Empty column here --->
+::: {.column width="5%"} 
+<!--- Empty column here --->
+:::
+
+
+::: {.column width="50%"}
+
+<br>
+
+::: {.callout-note .fragment}
+
+# Question arises
+
+- Many integration methods 
+  
+  ---> Which to use, how to choose them?
+
+- [Reproducibility crisis]{.secondary}
+  
+  ---> How to reproduce method and get [reliable]{.tertiary} results?
+
+- Existing benchmark studies are not 100% complete or all-encompassing
+
+  ---> Technical difficulty in implementation?
+
+:::
+
+:::
+
+::::
+
+::: {.notes}
+
+- Earlier talk about data, but which way we know could maximize / make use of full potential from data
+- Then, which task are we performing, and how do you know if it is better in your data not just by chance?
+- Fast way to validate them? Hard to reproduce, not really work on custom data
+- Have anyone try setting this validation up? 
+  - Reliable? Covered all? Easy to access? 
+
+:::
 
 ## MESSI pipeline
 
 - We created a workflow pipeline [*Multimodal Experiments with SyStematic Interrogation using nextflow*]{.secondary}
-- Built with Nextflow [@di2017nextflow], Singularity [@kurtzer2017singularity]
+- Solves reproducibility issue through:
+  - [Nextflow]{.primary} [@di2017nextflow], workflow managment
+  - Singularity [@kurtzer2017singularity], software environment control
+- Looking for collaborations
+
 
 ## MESSI pipeline
 
@@ -170,7 +375,21 @@ Supervisor: {{< meta other-authors >}}
 
 ::: {.column width="55%"}
 
-![](assets/img/overview_fig/overview_mid_panel.png){fig-align="center"}
+```{r}
+
+#| fig-align: center
+#| fig-cap-location: bottom
+
+knitr::include_graphics("assets/img/overview_fig/overview_mid_panel.png")
+```
+
+
+<!-- ![](assets/img/overview_fig/overview_mid_panel.png)
+{fig-align="center"} 
+#| label: "fig-overview-mid-panel"
+#| fig-cap: "MESSI Method evaluation"
+-->
+
 
 :::
 
@@ -196,15 +415,31 @@ Supervisor: {{< meta other-authors >}}
 - Provides rich report of computational resource usages
 
 
+## Computational Resources Usage {.nostretch}
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+```{r out.width="600px", out.height="480px"}
+#| fig-align: center
+#| fig-cap-location: bottom
+knitr::include_graphics("assets/img/fig_computational_resources_usage.png")
+```
+
+:::
+
+::: {.column width="40%"}
+
+- A
+- B
+- C
+
+:::
+
+:::: 
 
 
-
-
-
-
-## Computational Resources Usage
-
-![](assets/img/fig_computational_resources_usage.png)
 
 ## Performance on real-world datasets
 
@@ -226,23 +461,20 @@ Supervisor: {{< meta other-authors >}}
 
 - TODO
 
-## GeoMx results 1
+## GeoMxTools PCA
 
-![](assets/img/high_cv_genes_heatmap.png)
+![](assets/img/geomx_results/class_segment_pca_spe_plot.png)
 
-## GeoMx results 2
+## GeoMxTools Volcano plot
 
+![](assets/img/geomx_results/acr_vs_quilty_volcano_plot.png)
 
-![](assets/img/segment_vs_class_umap_plot.png)
-
-## GeoMx results 3
-
-![](assets/img/segment_vs_class_tsne_plot.png)
+## GeoMxTools Significant genes heatmap
 
 
-## GeoMx results 4
+![](assets/img/geomx_results/acr_quilty_sig_gene_heatmap.png)
 
-- TODO
+
 
 ## Next steps
 
@@ -268,7 +500,7 @@ Supervisor: {{< meta other-authors >}}
 
 # Thanks! {.thanks}
 
-## {#acknwledgements .smaller}
+## {#acknowledgements .smaller}
 
 ### Acknowledgements
 
@@ -284,9 +516,9 @@ Supervisor: {{< meta other-authors >}}
 - Mingming Zhang
 
 
-::: {.footer}
-![](assets/logo.png)
-:::
+<!-- ::: {.footer}
+![](assets/img/website_no_bkg.png)
+::: -->
 
 
 ## Reference
