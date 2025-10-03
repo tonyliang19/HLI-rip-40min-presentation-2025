@@ -1,0 +1,17 @@
+/* 
+  Add some tags to center figure caption
+*/
+figcaption {
+  margin: auto;
+  text-align: center;
+}
+
+p.caption {
+  margin: auto;
+  text-align: center;
+}
+
+.figure-caption {
+  margin: auto;
+  text-align: center;
+}

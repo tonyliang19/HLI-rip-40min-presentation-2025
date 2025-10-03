@@ -83,11 +83,14 @@ $round-height: 126px;
       figure {
         figcaption {
           font-size: 0.5em;
+          margin: auto;
+          text-align: center;
         }
       }
     }
   }
 }
+
 
 .reveal .slide aside .aside-footnotes {
   font-size: 14px;
